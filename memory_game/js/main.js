@@ -55,3 +55,25 @@ function createBoard(){
 
 createBoard();
 
+function shuffleCards(){
+	var m = cards.length, t, i;
+	while (m) {
+		i = Math.floor(Math.random() * m--);
+		t = cards[m];
+		cards[m] = cards[i];
+		cards[i] = t;
+	}
+	return cards;
+}
+
+shuffleCards();
+
+// How do I re-createBoard, clear the cardsInPlay array, and also removed the played cards?
+function resetCards(){
+	var button = document.getElementById("reset-button");
+	button.addEventListener("click", createBoard);
+}
+
+resetCards();
+
+
